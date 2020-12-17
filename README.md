@@ -119,7 +119,7 @@ To approach the plant disease problem, we used a [Plant Disease Dataset](https:/
 To make the model more generalized, we randomly perform image augmentations to the training images before input them into the model, so the model see a more diverse data. Here are examples of how image augmentation is done:
 
 <img src="images/data_augmentation.png" alt="Data Augmentation"
-	title="Data Augmentation" width="50%" />
+	title="Data Augmentation" width="65%" />
 
 Note that for the validation dataset, we only perform Image Normalization before input them into the model.
 
@@ -138,16 +138,16 @@ Figures are good here. Maybe you present your network architecture or show some 
 The final model yields 97.62% accuracy on the validation dataset. Comparing to the [model]((https://www.kaggle.com/vanvalkenberg/cnn-for-plant-disease-detection-92-val-accuracy/notebook)) from Ritwek Khosla, our model increase the performance by around 5.62%. Below are the charts from training the model:
 
 <img src="images/train_loss.png" alt="Train loss"
-	title="Train loss" width="50%" />
+	title="Train loss" width="70%" />
 <img src="images/validation_loss.png" alt="Validation loss"
-	title="Validation loss" width="50%" />
+	title="Validation loss" width="70%" />
 <img src="images/validation_accuracy.png" alt="Validation accuracy"
-	title="Validation accuracy" width="50%" />
+	title="Validation accuracy" width="70%" />
 
 Here is the confusion matrix which show the true label vs. the predicted label:
 
 <img src="images/confusion_matrix.png" alt="Confusion_matrix"
-	title="Confusion matrix" width="75%" />
+	title="Confusion matrix" width="90%" />
 
 <!-- How did you evaluate your approach? How well did you do? What are you comparing to? Maybe you want ablation studies or comparisons of different methods.
 
