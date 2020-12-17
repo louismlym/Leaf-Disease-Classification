@@ -118,7 +118,8 @@ To approach the plant disease problem, we used a [Plant Disease Dataset](https:/
 
 To make the model more generalized, we randomly perform image augmentations to the training images before input them into the model, so the model see a more diverse data. Here are examples of how image augmentation is done:
 
-![Data Augmentation](images/data_augmentation.png)
+<img src="images/data_augmentation.png" alt="Data Augmentation"
+	title="Data Augmentation" width="50%" />
 
 Note that for the validation dataset, we only perform Image Normalization before input them into the model.
 
@@ -126,7 +127,7 @@ Note that for the validation dataset, we only perform Image Normalization before
 
 We have created a CNN model as similar as what Ritwek Khosla created, such that we used three convolutional layers with max pooling layer after each of them and had two fully connected layers at the end. In addition, we applied batch normalization layers after the third convolutional layer and after the first fully connected layer to make the model learn better. We also added a dropout layer after the first fully connected layer to make the model more generalized. Below is the diagram of our network architecture:
 
-![Network Architecture](images/network_architecture.png =470x)
+![Network Architecture](images/network_architecture.png)
 
 <!-- How did you decide to solve the problem? What network architecture did you use? What data? Lots of details here about all the things you did. This section describes almost your whole project.
 
@@ -136,13 +137,17 @@ Figures are good here. Maybe you present your network architecture or show some 
 
 The final model yields 97.62% accuracy on the validation dataset. Comparing to the [model]((https://www.kaggle.com/vanvalkenberg/cnn-for-plant-disease-detection-92-val-accuracy/notebook)) from Ritwek Khosla, our model increase the performance by around 5.62%. Below are the charts from training the model:
 
-![Train loss](images/train_loss.png =400x)
-![Validation loss](images/validation_loss.png =400x)
-![Validation accuracy](images/validation_accuracy.png =400x)
+<img src="images/train_loss.png" alt="Train loss"
+	title="Train loss" width="50%" />
+<img src="images/validation_loss.png" alt="Validation loss"
+	title="Validation loss" width="50%" />
+<img src="images/validation_accuracy.png" alt="Validation accuracy"
+	title="Validation accuracy" width="50%" />
 
 Here is the confusion matrix which show the true label vs. the predicted label:
 
-![Confusion matrix](images/confusion_matrix.png =500x)
+<img src="images/confusion_matrix.png" alt="Confusion_matrix"
+	title="Confusion matrix" width="75%" />
 
 <!-- How did you evaluate your approach? How well did you do? What are you comparing to? Maybe you want ablation studies or comparisons of different methods.
 
