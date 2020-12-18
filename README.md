@@ -129,6 +129,8 @@ We have created a CNN model as similar as what Ritwek Khosla created, such that 
 
 ![Network Architecture](images/network_architecture.png)
 
+The model's hyperparameters are listed in [train.py](src/train.py)
+
 <!-- How did you decide to solve the problem? What network architecture did you use? What data? Lots of details here about all the things you did. This section describes almost your whole project.
 
 Figures are good here. Maybe you present your network architecture or show some example data points? -->
@@ -146,8 +148,13 @@ The final model yields 97.62% accuracy on the validation dataset. Comparing to t
 
 Here is the confusion matrix which show the true label vs. the predicted label:
 
-<img src="images/confusion_matrix.png" alt="Confusion_matrix"
+<img src="images/confusion_matrix.png" alt="Confusion matrix"
 	title="Confusion matrix" width="90%" />
+
+Below are some of the examples of what the model predicts:
+
+<img src="images/prediction_examples.png" alt="Prediction Example"
+	title="Prediction Example" width="80%" />
 
 <!-- How did you evaluate your approach? How well did you do? What are you comparing to? Maybe you want ablation studies or comparisons of different methods.
 
