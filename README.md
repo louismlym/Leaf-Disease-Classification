@@ -154,7 +154,7 @@ Here is the confusion matrix which show the true label vs. the predicted label:
 Below are some of the examples of what the model predicts:
 
 <img src="images/prediction_examples.png" alt="Prediction Example"
-	title="Prediction Example" width="80%" />
+	title="Prediction Example" width="95%" />
 
 <!-- How did you evaluate your approach? How well did you do? What are you comparing to? Maybe you want ablation studies or comparisons of different methods.
 
