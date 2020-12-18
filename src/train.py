@@ -6,6 +6,7 @@ import torch.nn.functional as F
 import multiprocessing
 import glob
 import time
+import utils
 import numpy as np
 import matplotlib.pyplot as plt
 from model import CNN
@@ -123,7 +124,7 @@ test_loader = torch.utils.data.DataLoader(data_test, batch_size=TEST_BATCH_SIZE,
 
 model = CNN(NUM_CLASSES, device).to(device)
 optimizer = optim.SGD(model.parameters(), lr=LEARNING_RATE, momentum=MOMENTUM, weight_decay=WEIGHT_DECAY)
-start_epoch = model.load_last_model(LOG_PATH)
+start_epoch = model.load_last_model(LOG_PATH) + 1
 # read log
 if (os.path.exists(LOG_PATH + "log.pkl")):
   train_losses, test_losses, test_accuracies = pickle.load(open(LOG_PATH + "log.pkl", 'rb'))
@@ -134,7 +135,7 @@ test_loss, test_accuracy, confusion_matrix = test(model, device, test_loader, lo
 
 test_losses.append((start_epoch, test_loss))
 test_accuracies.append((start_epoch, test_accuracy))
-epoch = start_epoch
+epoch = start_epoch - 1
 
 try:
   for epoch in range(start_epoch, EPOCHS + 1):
@@ -159,9 +160,9 @@ except:
 finally:
   model.save_model(LOG_PATH + '%03d.pt' % epoch, 0)
   ep, val = zip(*train_losses)
-  plot(ep, val, 'Train loss', 'Epoch', 'Error')
+  utils.plot(ep, val, 'Train loss', 'Epoch', 'Error')
   ep, val = zip(*test_losses)
-  plot(ep, val, 'Test loss', 'Epoch', 'Error')
+  utils.plot(ep, val, 'Test loss', 'Epoch', 'Error')
   ep, val = zip(*test_accuracies)
-  plot(ep, val, 'Test accuracy', 'Epoch', 'Accuracy (percentage)')
+  utils.plot(ep, val, 'Test accuracy', 'Epoch', 'Accuracy (percentage)')
   utils.plot_confusion_matrix(confusion_matrix, data_train.classes)
