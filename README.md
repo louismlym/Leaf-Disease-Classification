@@ -20,9 +20,9 @@ You may also want to say a little bit here about what you did. Not too much thou
 
 ## Related Work
 
-We have found a [Python notebook](https://www.kaggle.com/vanvalkenberg/cnn-for-plant-disease-detection-92-val-accuracy/notebook) from Ritwek Khosla implementing CNN model to detect the plant disease using the same dataset that we are using. The model yields ~92% accuracy on the validation dataset. In term of the model. he firstly applied a batch normalization layer and then used three convolutional layers with a max pooling layer after each convolutional layer. Then, he flattened the output from those layers and apply two fully connected layers in order to categorize images into a class (among 38 classes).
+We have found a [Python notebook](https://www.kaggle.com/vanvalkenberg/cnn-for-plant-disease-detection-92-val-accuracy/notebook) from Ritwek Khosla implementing CNN model to detect the plant disease using the same dataset that we are using. The model yields ~92% accuracy on the validation dataset. In term of the model, he firstly applied a batch normalization layer and then used three convolutional layers with a max pooling layer after each convolutional layer. Then, he flattened the output from those layers and apply two fully connected layers in order to categorize images into a class (among 38 classes).
 
-We believe that the accuracy can be improved by performing data augmentation such as RandomHorizontalFlip, RandomRotation, and ImageNormalization. We believe that this will make the model more generalized and perform well on the validation dataset.
+We believe that the accuracy can be improved by performing data augmentation such as RandomHorizontalFlip, RandomRotation, and ImageNormalization. We also believe that adding more batch normalization layers and a dropout layer will make the model more generalized and perform better on the validation dataset.
 
 <!-- Other people are out there doing things. What did they do? Was it good? Was it bad? Talk about it here. -->
 
