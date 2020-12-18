@@ -129,7 +129,7 @@ We have created a CNN model as similar as what Ritwek Khosla created, such that 
 
 ![Network Architecture](images/network_architecture.png)
 
-The model's hyperparameters are listed in [train.py](src/train.py)
+The training image size is orignially 256x256. However, to make the model learn faster and to not decrease too much of the quality image, we transform each image into 128x128 before inputting them into the model. Each image is in RGB, so they all start with three channels. We want to classify the images into one of the 38 classes, so we end up with a fully connected layer that has 38 nodes at the end. We use cross entropy loss to see how well the model is performing. We also use stochastic gradient descent to optimize our model. The model's hyperparameters such as learning rate, momentum, weight decay, and etc. are listed in [train.py](src/train.py)
 
 <!-- How did you decide to solve the problem? What network architecture did you use? What data? Lots of details here about all the things you did. This section describes almost your whole project.
 
