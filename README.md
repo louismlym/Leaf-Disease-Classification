@@ -121,7 +121,7 @@ To make the model more generalized, we randomly perform image augmentations to t
 <img src="images/data_augmentation.png" alt="Data Augmentation"
 	title="Data Augmentation" width="65%" />
 
-Note that for the validation dataset, we only perform Image Normalization before input them into the model.
+We always resize the image to 128x128, 50% randomly flip a trained image horizontally, rotate a trained image for some degree in [-90, 90], and always normalize a trained image. For the validation dataset, we only perform Image Normalization to each image before input them into the model.
 
 ## Network Architecture
 
@@ -146,12 +146,16 @@ The final model yields 97.62% accuracy on the validation dataset. Comparing to t
 <img src="images/validation_accuracy.png" alt="Validation accuracy"
 	title="Validation accuracy" width="70%" />
 
-Here is the confusion matrix which show the true label vs. the predicted label:
+We can see that the model's validation loss and validation accuracy get quite saturated after being trained for 7 epochs. It seems like our model fits the training dataset well by not being too underfitted nor overfitted.
+
+To get more sense of how good the model performs on each class, we have built a confusion matrix to see the how many times a label is being predicted as. Here is the confusion matrix which true label is on the vertical axis and predicted label is on the horizontal axis:
 
 <img src="images/confusion_matrix.png" alt="Confusion matrix"
 	title="Confusion matrix" width="90%" />
 
-Below are some of the examples of what the model predicts:
+Since the model performs very well with 97.62% validation accuracy, we can see high heat along the diagonal of the confusion matrix because the label being predicted is correct. Though, there are some classes that are being commonly predicted to some other classes. For example, among 410 images of `Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot`, 45 images were falsely predicted as `Corn_(maize)___Northern_Leaf_Blight`. We will discuss about this more in the next section.
+
+We have provided examples of 30 images that the model predicted:
 
 <img src="images/prediction_examples.png" alt="Prediction Example"
 	title="Prediction Example" width="95%" />
@@ -162,5 +166,10 @@ You may want some qualitative results and quantitative results. Example images/t
 
 ## Discussion
 
+We can see that applying image augmentations and adding more batch normalization layers and a dropout layer significantly increase the model's performance. We believe that image augmentations will prepare the model for a more diverse data and that batch normalization layers will increase the capacity of how much model can learn, while adding a dropout layer ensures that the model is not being too overfitted to the training dataset.
+
+Based on the results we included above, we would like to propose an idea of possible improvements to why the model falsely predicts `Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot` to be `Corn_(maize)___Northern_Leaf_Blight` (but not many on aother way around). We could see from the prediction images above that the leaves of these two classes look very similar. Also, we notice that `Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot` has the least number of images in the training dataset (only 1,642 images) while there are 1,908 images of `Corn_(maize)___Northern_Leaf_Blight`. By learning about `Corn_(maize)___Northern_Leaf_Blight` more, we have made the model become biased towards it. If we could add more images of `Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot` into the training dataset, we are hopeful that the model will recognize them better and decrease the number of times it falsely predict.
 <!-- You can talk about your results and the stuff you've learned here if you want. Or discuss other things. Really whatever you want, it's your project. -->
 
+## Author
+This project is created by Louis Maliyam for the final project of the University of Washington CSE599 G1 (Autumn 2020). 
