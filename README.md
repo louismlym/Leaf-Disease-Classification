@@ -4,8 +4,8 @@ We have created a CNN model to detect healthy and diseased crop leaves, which ca
 
 Applying image augmentations and using a CNN model with max pooling, batch normalization, and dropout layers to train and predict give us 97.62% accuracy on the validation dataset.
 
-TODO: ADD VIDEO
-
+Click an image below to see the **video** about this project:
+[![Video overview](images/video_thumbnail.png)](https://youtu.be/bcaKZEGhhuA)
 <!-- Write a 3-4 sentence abstract. It should introduce the problem and your approach. You may also want some numbers like 35 mAP and 78% accuracy. You can use this example README for your project, you can use a different ordering for your website, or you can make a totally different website altogether!
 
 VIDEO GOES HERE (probably): Record a 2-3 minute long video presenting your work. One option - take all your figures/example images/charts that you made for your website and put them in a slide deck, then record the video over zoom or some other recording platform (screen record using Quicktime on Mac OS works well). The video doesn't have to be particularly well produced or anything. -->
